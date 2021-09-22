@@ -1,0 +1,69 @@
+        <div class="row mt-3" *ngFor="let c of gdt">
+          <div class="col-md-2">
+              <div class="card">
+              <!-- <center> -->
+                <!-- <h1>{{ c.name }}</h1> -->
+                <img class="img-fluid" src="{{ c.category_image }}" alt="">
+                <!-- <a href="#"><button class="btn btn-info mt-5">view</button></a> -->
+              <!-- </center> -->
+              <br>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <div class="card">
+       
+
+     
+            <!-- bootstrap corosol -->
+                    <div id="gallery_dress" class="carousel slide" data-ride="carousel" data-interval="false">
+                      <div class="carousel-inner">
+                         
+                          <div class="carousel-item active">
+                            <div class="row">
+                             
+                              <!-- {% for p in prod %}
+                                    {% if p.category == c.name %} -->
+                            
+                                  <div class="col">
+                                    <!-- <a href="/buyer/productview/{{p.id}}"> -->
+                                    <!-- <a href="{% url 'productview' id=p.id %}"> -->
+                                  
+                                      <div class="card">
+                                        <!-- <center> -->
+                                          <!-- <img class="img-fluid mt-2" src="{{ p.product_image.url }}"  style="height:8rem;width:10rem;"   alt="Image 6"/> -->
+                                      
+                                          <!-- <p style="color:black;">{{ p.description }}</p> -->
+                                          <!-- <a href="/buyer/productview/{{p.id}}"><button class="btn btn-info">view</button></a> -->
+
+                                        <!-- </center> -->
+                                      
+                                      </div>
+                                    <!-- </a> -->
+                                  </div>
+                                  <!-- {% endif %}
+                              {% endfor %} -->
+                            
+                            </div>
+                          </div>
+                          
+                      </div>
+                  
+                      <!-- {% if dsprod %} -->
+                      <a class="carousel-control-prev" href="#gallery_dress" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                      </a>
+                  
+                      <a class="carousel-control-next" href="#gallery_dress" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                      </a>
+                      <!-- {% else %}
+                      {% endif %} -->
+                  </div>
+
+            </div>
+          </div>
+        </div>
+        
+      <!-- {% endfor %} -->
