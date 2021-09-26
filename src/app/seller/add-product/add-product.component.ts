@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from 'src/app/services/dataservice.service';
 import { product } from './product.model';
-import { FormControl, } from '@angular/forms';
+import { category } from './product.model';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-product',
@@ -10,24 +11,67 @@ import { FormControl, } from '@angular/forms';
 })
 export class AddProductComponent implements OnInit {
 
-  name: any;
-  inputValue : any;
-  res=new product()
-  constructor(private getd:DataserviceService) { 
+  form: FormGroup;
 
-    this.inputValue="test"
-    
-  }
+  product_image !:File
+  name !: string
+  price !: any
+  stock !: any
+  category !: string
+  description !:string 
+
+  
+  cat=new category()
+  res=new product()
+  constructor( public fb: FormBuilder, private getd:DataserviceService) {
+    // this.product_image;
+    this.form = this.fb.group({
+      name:[''],
+      price:[''],
+      description:[''],
+      product_image:[null],
+      stock:[''],
+      category:[''],
+
+    })
+   
+
+   }
+
 
   ngOnInit(): void {
-    this.name="surya"
+    this.displaydata();
+  }
+
+  //new
+  onChange(event:any) {
+    this.product_image = event.target.files[0]
   }
 
   dataSource:any
   gdt:any;
 
+  displaydata(){
+    this.getd.getdata().subscribe(cat=>{
+    this.gdt=cat;
+    console.log(this.gdt)
+   this.dataSource = cat;
+ 
+    })
+  }
+
   addproduct(){
-    this.getd.createproduct(this.res).subscribe(result=>{
+    const fd =  new FormData();
+    fd.append('image', this.product_image,)
+    fd.append('price', this.price,)
+    fd.append('description', this.description,)
+    fd.append('name', this.name,)
+    fd.append('stock', this.stock,)
+    fd.append('category', this.category,)
+
+    console.log(fd.get('image'))
+
+    this.getd.createproduct(fd).subscribe(result=>{
       console.log(result)
     })
   }

@@ -82,7 +82,7 @@
                         <!-- <td>{{p.date}}</td> -->
                         <td>{{ p.stock }}</td>
                         <td>{{ p.price }}</td>
-                        <!-- <th scope="row"><a href="{% url 'updateProduct' id=p.id %}">update</a></th> -->
+                        <th scope="row"><a routerLink="updateproduct" routerLinkActive="active" (click)=update(p.id)>update</a></th>
                         <!-- <th scope="row"><a href="/deleteproduct/{{p.id}}">delete</a></th>
                       </tr>
                       <!-- {%endfor%} -->

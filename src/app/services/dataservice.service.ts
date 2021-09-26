@@ -26,13 +26,20 @@ export class DataserviceService {
     return this.httpclient.get('http://localhost:8000/api/product/')
   }
 
+  // createproduct(data:any){
+  //   return this.httpclient.post('http://localhost:8000/api/product/',data)
+  // }
   createproduct(data:any){
-    return this.httpclient.post('http://localhost:8000/api/product/',data)
+    return this.httpclient.post('http://localhost:8000/prod/',data)
   }
   
-  insertdatas( data:any){
-    console.log(data)
-    return this.httpclient.post('https://cybersquare.herokuapp.com/user/',data)
+  updateproduct(data:any){
+    return this.httpclient.put('http://localhost:8000/prod/',data)
   }
+  
+  // insertdatas( data:any){
+  //   console.log(data)
+  //   return this.httpclient.post('https://cybersquare.herokuapp.com/user/',data)
+  // }
 
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +13,7 @@ import { SellerNavComponent } from './seller/seller-nav/seller-nav.component';
 import { SellerSideNavComponent } from './seller/seller-side-nav/seller-side-nav.component';
 import { SellerDashboardComponent } from './seller/seller-dashboard/seller-dashboard.component';
 import { SellerModule } from './seller/seller.module';
-import { ReactiveFormsModule } from '@angular/forms';
+// import { ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from './shared/shared.module';
 
@@ -36,7 +36,7 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     HttpClientModule,
     SellerModule,
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
     SharedModule
 
   ],

@@ -17,6 +17,7 @@ export class SellerDashboardComponent implements OnInit {
     this.displaydata();
   }
 
+
   dataSource:any
   gdt:any;
 
@@ -27,6 +28,12 @@ export class SellerDashboardComponent implements OnInit {
    this.dataSource = res;
  
     })
+  }
+
+  update(uid:any){
+    console.log(uid)
+
+
   }
 
 }
