@@ -32,9 +32,21 @@ export class DataserviceService {
   createproduct(data:any){
     return this.httpclient.post('http://localhost:8000/prod/',data)
   }
-  
+
+  id:any
   updateproduct(data:any){
-    return this.httpclient.put('http://localhost:8000/prod/',data)
+    console.log(data.get('id'))
+    this.id=data.get('id')
+    return this.httpclient.put('http://localhost:8000/update/',data)
+    // return this.httpclient.put('http://localhost:8000/api/product/'+this.id+'/',data)
+    
+  }
+  delete(data:any){
+    return this.httpclient.delete('http://localhost:8000/api/product/'+data)
+    // return this.httpclient.delete('http://localhost:8000/delete/',data)
+    // this.httpclient.delete('http://localhost:8000/delete/'+data).subscribe(data => {
+    //   console.log(data);
+    // });
   }
   
   // insertdatas( data:any){

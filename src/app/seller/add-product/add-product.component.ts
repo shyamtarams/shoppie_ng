@@ -34,8 +34,6 @@ export class AddProductComponent implements OnInit {
       category:[''],
 
     })
-   
-
    }
 
 

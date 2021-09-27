@@ -35,25 +35,17 @@
                 <div class="col-sm-3">
                     <div class="card shadow bg-light">
                         <p>Active</p>
-                        <!-- {% if ocnt %}
-                        <h1>{{ ocnt }}</h1>
-                        {% else %}
-                        <h1>0</h1>
-                        {% endif %} -->
                     </div>
                 </div>
             </div>
 
             <div class="col-md-12 mt-4">
-                <!-- <div class="card"> -->
                     <form class="form-inline my-2 my-lg-0" method="POST" >
-                        <!-- {% csrf_token %} -->
                         <input class="form-control mr-sm-2" name="search" id="search" type="search" placeholder="Search" aria-label="Search">
                         <a href="/productsearch">
                           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Product Search</button>
                         </a>
                     </form>
-                <!-- </div> -->
             </div>
 
             <table class="table table-bordered mt-4" >
@@ -71,30 +63,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- {% for p in plst %} -->
+                    
                     <tr *ngFor="let p of gdt">
                         <td>{{ p.name }}</td>
                         <!-- <th scope="row">1</th>  -->
                         <!-- <td>{{p.name}}</td> -->
-                        <td><img src="{{ p.product_image }}" alt="" width="60px" height="30px"></td>
+                        <td><img src="http://localhost:8000{{p.product_image}}" alt="" width="60px" height="30px"></td>
                         <td>{{p.category}}</td>
                         <td>{{p.description}}</td>
                         <!-- <td>{{p.date}}</td> -->
                         <td>{{ p.stock }}</td>
                         <td>{{ p.price }}</td>
-                        <th scope="row"><a routerLink="updateproduct" routerLinkActive="active" (click)=update(p.id)>update</a></th>
-                        <!-- <th scope="row"><a href="/deleteproduct/{{p.id}}">delete</a></th>
-                      </tr>
-                      <!-- {%endfor%} -->
+                        <th scope="row"><a routerLink="updateproduct" routerLinkActive="active" (click)=proddata(p.id)>update</a></th>
+                        <!-- <th scope="row" (click)=delete(p.id)>delete</th> -->
+                        <th scope="row"  ><a (click)=delete(p.id)>delete</a></th>
+                    </tr>
+                      
                 </tbody>
+                
             </table>
 
         </div>
-       
-        <!-- <div class="col-md-3">
-            <div class="card">
-                <h1>details</h1>
-            </div>
-        </div> -->
     </div>
 </div>

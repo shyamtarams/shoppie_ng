@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from 'src/app/services/dataservice.service'; 
 import {product} from './product.model'
+import { SellerService } from '../seller.service';
 
 @Component({
   selector: 'app-seller-dashboard',
@@ -11,12 +12,13 @@ export class SellerDashboardComponent implements OnInit {
 
   
   res=new product()
-  constructor(private getd:DataserviceService) { }
+  constructor(private getd:DataserviceService,private sh:SellerService) { }
+  message="hey"
 
   ngOnInit(): void {
     this.displaydata();
+    // this.sh.sentmsg(this.message)
   }
-
 
   dataSource:any
   gdt:any;
@@ -30,10 +32,18 @@ export class SellerDashboardComponent implements OnInit {
     })
   }
 
-  update(uid:any){
-    console.log(uid)
-
-
+  // pid:any
+  proddata(pid:any){
+    console.log(pid)
+    this.sh.sentmsg(pid)
   }
+
+delete(pid:any){
+  console.log(pid)
+  this.getd.delete(pid).subscribe(pid=>{
+    console.log(pid)
+    this.displaydata()
+  });
+}
 
 }

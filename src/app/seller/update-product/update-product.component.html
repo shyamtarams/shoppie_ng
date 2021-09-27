@@ -1,1 +1,64 @@
-<p>update-product works!</p>
+<div class="col-md-9">
+    <div class="card">
+        <h1>content</h1>
+    </div>
+
+    <form  method="POST"  enctype="multipart/form-data" (click)=update() >
+        
+        <div class="row mt-4">
+            <div class="col-sm-6 ">
+            <input type="text" class="form-control" name="name"  maxlength="254" [(ngModel)]="name" value="{{gdt.name}}"  id="id_name" placeholder="{{gdt.name}}">
+            </div>
+            <!-- <div class="col-sm-6" >
+            <select name="category" id="id_category"  class="form-control" [(ngModel)]="category" value="{{gdt.category}}" >
+                <option name="category" id="id_category" *ngFor="let c of gdt"   class="form-control" >{{c.name}}</option>
+            </select>
+            </div> -->
+        </div>
+        <textarea name="description" class="form-control mt-4" cols="10" rows="10" [(ngModel)]="description"   id="id_description"  placeholder="{{gdt.description}}"></textarea>
+        <div class="row mt-4">
+            <div class="col-sm-6">
+               
+                <input type="file" class="form-control-file" name="product_image"  (change)="onChange($event)">
+            </div>
+            <div class="col-sm-3">
+                <input type="number" name="price" class="form-control"  id="id_price" [(ngModel)]="price" placeholder="{{ gdt.price}}"  value="{{ gdt.price}}">
+            </div>
+            <div class="col-sm-3">
+                <input type="number" name="stock" class="form-control" [(ngModel)]="stock"   id="id_stock" placeholder="{{ gdt.stock}}" value="{{ gdt.stock}}">
+            </div>
+        </div>
+
+            <button type="submit" class="btn btn-info mt-4">Update product</button>
+        
+    </form> 
+
+</div>
+
+
+
+<!-- <div class="row mt-4">
+    <div class="col-sm-6 ">
+    <input type="text" class="form-control" name="name" [(ngModel)]="name" maxlength="254"  id="id_name" placeholder="">
+    </div>
+    <div class="col-sm-6" >
+    <select name="category" id="id_category"  class="form-control" [(ngModel)]="category"  >
+        <option name="category" id="id_category" *ngFor="let c of gdt"   class="form-control" >{{c.name}}</option>
+    </select>
+    </div>
+</div>
+<textarea name="description" class="form-control mt-4" cols="10" rows="10" required="" [(ngModel)]="description" id="id_description" placeholder="description"></textarea>
+<div class="row mt-4">
+    <div class="col-sm-6">
+       
+        <input type="file" class="form-control-file" name="product_image"  (change)="onChange($event)">
+    </div>
+    <div class="col-sm-3">
+        <input type="number" name="price" class="form-control" required="" id="id_price" placeholder="product price" [(ngModel)]="price">
+    </div>
+    <div class="col-sm-3">
+        <input type="number" name="stock" class="form-control" required="" id="id_stock" placeholder="number of stock" [(ngModel)]="stock">
+    </div>
+</div>
+
+    <button type="submit" class="btn btn-info mt-4">Add product</button> -->
