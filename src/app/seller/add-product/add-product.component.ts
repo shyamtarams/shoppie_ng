@@ -58,7 +58,9 @@ export class AddProductComponent implements OnInit {
     })
   }
 
+  id:any
   addproduct(){
+    this.id=localStorage.getItem('user_id')
     const fd =  new FormData();
     fd.append('image', this.product_image,)
     fd.append('price', this.price,)
@@ -66,7 +68,7 @@ export class AddProductComponent implements OnInit {
     fd.append('name', this.name,)
     fd.append('stock', this.stock,)
     fd.append('category', this.category,)
-
+    fd.append('id', this.id,)
     console.log(fd.get('image'))
 
     this.getd.createproduct(fd).subscribe(result=>{

@@ -14,6 +14,10 @@ export class SellerDashboardComponent implements OnInit {
   res=new product()
   constructor(private getd:DataserviceService,private sh:SellerService) { }
   message="hey"
+  product_count=0
+  product_selled=0
+  product_returned=0
+  product_active=0
 
   ngOnInit(): void {
     this.displaydata();
@@ -22,11 +26,17 @@ export class SellerDashboardComponent implements OnInit {
 
   dataSource:any
   gdt:any;
+  uid:any
 
   displaydata(){
-    this.getd.getproductdata().subscribe(res=>{
+    console.log(localStorage.getItem('username'))
+    console.log(localStorage.getItem('user_id'))
+    this.uid=localStorage.getItem('user_id')
+
+    this.getd.getproductdata({'uid':this.uid}).subscribe(res=>{
     this.gdt=res;
     console.log(this.gdt)
+    this.product_count=this.gdt.length
    this.dataSource = res;
  
     })

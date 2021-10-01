@@ -12,11 +12,11 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ user }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">my orders</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/accounts/logout">logout</a>
+            <a class="dropdown-item" (click)="logout()">logout</a>
           </div>
         </li>
       </ul>

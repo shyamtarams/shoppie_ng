@@ -13,4 +13,8 @@ export class SellerService {
   getmsg(){
     return this.message
   }
+  
+  ps(){
+    
+  }
 }

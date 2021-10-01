@@ -13,28 +13,25 @@
                 <div class="col-sm-3">
                     <div class="card shadow bg-light">
                         <p>products</p>
-                        <!-- {% if pcnt %}
-                        <h1>{{ pcnt }}</h1>
-                        {% else %}
-                        <h1>0</h1>
-                        {% endif %} -->
+                       <h1>{{ product_count }}</h1> 
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card shadow bg-light ">
                         <p>selled</p>
-                        <h1>0</h1>
+                        <h1>{{ product_selled }}</h1>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card shadow bg-light">
                         <p>returned</p>
-                        <h1>0</h1>
+                        <h1>{{ product_returned }}</h1>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card shadow bg-light">
                         <p>Active</p>
+                        <h1>{{ product_active }}</h1>
                     </div>
                 </div>
             </div>
@@ -74,7 +71,7 @@
                         <!-- <td>{{p.date}}</td> -->
                         <td>{{ p.stock }}</td>
                         <td>{{ p.price }}</td>
-                        <th scope="row"><a routerLink="updateproduct" routerLinkActive="active" (click)=proddata(p.id)>update</a></th>
+                        <th scope="row"><a routerLink="/seller/updateproduct" routerLinkActive="active" (click)=proddata(p.id)>update</a></th>
                         <!-- <th scope="row" (click)=delete(p.id)>delete</th> -->
                         <th scope="row"  ><a (click)=delete(p.id)>delete</a></th>
                     </tr>

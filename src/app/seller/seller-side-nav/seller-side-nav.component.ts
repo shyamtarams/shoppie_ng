@@ -9,7 +9,9 @@ export class SellerSideNavComponent implements OnInit {
 
   constructor() { }
 
+  user:any
   ngOnInit(): void {
+    this.user=localStorage.getItem('username')
   }
 
 }

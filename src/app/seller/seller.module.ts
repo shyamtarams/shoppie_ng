@@ -8,9 +8,14 @@ import { SellerSideNavComponent } from './seller-side-nav/seller-side-nav.compon
 // import { ListProductComponent } from './list-product/list-product.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ProductOrdersComponent } from './product-orders/product-orders.component';
-import { sellerRoutingModule } from './seller-routing.module';
+// import { sellerRoutingModule } from './seller-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { UpdateProductComponent } from './update-product/update-product.component';
+import { SellerComponent } from './seller.component';
+import { RoutesModule } from './routes/routes.module';
+import { TestcComponent } from './testc/testc.component';
+
+
 
 
 
@@ -19,20 +24,26 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     // ListProductComponent,  
     AddProductComponent,
     UpdateProductComponent,
+    SellerComponent,
+    SellerNavComponent,
+    SellerSideNavComponent,
+    TestcComponent,
+    ProductOrdersComponent,
   ],
   imports: [
     CommonModule,
     // FormsModule,
     // ReactiveFormsModule,
-    sellerRoutingModule,
-    SharedModule
+    // sellerRoutingModule,
+    SharedModule,
+    RoutesModule,
   ],
   entryComponents:[
-    SellerNavComponent,
-    SellerSideNavComponent,
+    // SellerNavComponent,
+    // SellerSideNavComponent,
     SellerDashboardComponent,
     // AddProductComponent,
-    ProductOrdersComponent,
+    // ProductOrdersComponent,
   ],
 })
 
