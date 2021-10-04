@@ -1,0 +1,19 @@
+<!-- <div class="container-fluid"> -->
+    <div class="card " ><br>
+      <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-sm-1" *ngFor="let dt of gdt">
+          <!-- <center> -->
+            <img class="rounded-circle img-fluid"  [src]="dt.category_image" alt="" style="height: 100px;width: 100px;">
+          <!-- </center> -->
+          <div layout="row" layout-align="center center">
+              {{ dt.name }}
+          </div>
+          
+        </div>
+       
+       
+      </div>
+    </div>
+<!-- </div><br> -->

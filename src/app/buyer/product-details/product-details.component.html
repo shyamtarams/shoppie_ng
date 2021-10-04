@@ -1,0 +1,33 @@
+<!-- <div class="container-fluid">
+    <div class="row">
+
+    </div>
+</div> -->
+
+<div class="row mt-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 text-center card shadow" >
+        <img class="img-fluid shadow mt-4 " src="http://localhost:8000{{ prod.product_image}}" style="height:15rem;width:25rem;border-radius: 5px;" alt="">
+        <h3 class="mt-4">{{ prod.name }}</h3>
+        <h4 class="mt-4">{{ prod.description }}</h4>
+        <h4 class="mt-4">Price :{{ prod.price }}/-</h4>
+        <div class="row">
+            <div class="col-sm-6">
+                <button class="btn btn-info">Add To Cart</button>
+            </div>
+            <div class="col-sm-6">
+                <button class="btn btn-info">Buy Now</button>
+            </div>
+        </div><br>
+    </div> 
+    <div class="col-md-4"></div>
+</div>
+
+<!-- same category products -->
+<!-- <div class="col mt-4 card shadow" *ngFor="let p of pc">
+    <div class="row">
+        <div class="col-sm-2 mt-2">
+            <img class="img-fluid" src="http://localhost:8000{{p.product_image}}" style="height:8rem;width:10rem;border-radius: 5px;" alt="">
+        </div>  
+    </div>
+</div> -->

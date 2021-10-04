@@ -70,6 +70,7 @@ export class AddProductComponent implements OnInit {
     fd.append('category', this.category,)
     fd.append('id', this.id,)
     console.log(fd.get('image'))
+    console.log(fd.get('category'))
 
     this.getd.createproduct(fd).subscribe(result=>{
       console.log(result)

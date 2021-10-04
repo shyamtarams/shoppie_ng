@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from 'src/app/services/dataservice.service';
 
-
 @Component({
-  selector: 'app-offer-bar',
-  templateUrl: './offer-bar.component.html',
-  styleUrls: ['./offer-bar.component.css']
+  selector: 'app-category-nav',
+  templateUrl: './category-nav.component.html',
+  styleUrls: ['./category-nav.component.css']
 })
-export class OfferBarComponent implements OnInit {
+export class CategoryNavComponent implements OnInit {
 
   constructor(private getd:DataserviceService) { }
 
@@ -15,10 +14,10 @@ export class OfferBarComponent implements OnInit {
     this.displaydata();
   }
 
-  gdt:any;
+  gdt:any
 
   displaydata(){
-    this.getd.getoffer().subscribe(res=>{
+    this.getd.getdata().subscribe(res=>{
     this.gdt=res;
     console.log(this.gdt)
   //  this.dataSource = res;

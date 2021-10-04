@@ -156,5 +156,21 @@ pot(post:any,token:any){
   //   return this.http.post('/api/posts', JSON.stringify(post), httpOptions);
   }
 
+  // search(sr:any){
+  //   return this.httpclient.post('http://localhost:8000/search/',sr).subscribe(data=>{
+  //     console.log(data)
+  //   })
+
+  // }
+  search(sr:any){
+    return this.httpclient.post('http://localhost:8000/search/',sr)
+
+  }
+
+ allprod(){
+   return this.httpclient.get('http://localhost:8000/listproduct')
+ }
+
+
 
 }

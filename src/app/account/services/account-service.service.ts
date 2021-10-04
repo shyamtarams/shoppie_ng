@@ -77,11 +77,15 @@ public logout() {
 
 // public rule:any
 public role(id:any){
+  console.log(id)
   this.httpclient.post('http://localhost:8000/check/',id).subscribe(data=>{
         console.log(data)
         // this.rule=data
         if(data == "seller"){
           this._router.navigate(['/seller/Dashboard']);
+        }
+        if(data == "buyer"){
+          this._router.navigate(['/buyer/dashboard']);
         }
   })
 }

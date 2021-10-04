@@ -1,0 +1,27 @@
+<div *ngFor="let c of cate">
+    <div id="gallery_dress" class="carousel slide" data-ride="carousel" data-interval="false"   >
+        <div class="carousel-inner">
+            <div class="carousel-item active"  >
+                <div class="row" >
+                            <div class="col" *ngFor="let dt of prod" >
+                                
+                                    <div class="card" *ngIf=" c.name == dt.category">
+                                        <a routerLink="/buyer/product" routerLinkActive="active" (click)="productview(dt.id)">
+                                            <img class="img-fluid mt-2" src="http://localhost:8000{{dt.product_image}}"  style="height:8rem;width:10rem;"   alt="Image 6"/>
+                                            <p style="color:black;">{{ dt.name }}</p>
+                                            <!-- <p>{{ c.name}}</p>
+                                            <p>{{ dt.category}}</p> --> 
+                                            
+                                        </a>
+                                   
+                                        
+                                </div>
+                            </div>
+            </div>
+        </div>
+    </div>  
+</div>
+</div>
+
+       
+

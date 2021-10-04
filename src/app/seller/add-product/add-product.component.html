@@ -9,8 +9,8 @@
             <input type="text" class="form-control" name="name" [(ngModel)]="name" maxlength="254" required="" id="id_name" placeholder="product name">
             </div>
             <div class="col-sm-6" >
-            <select name="category" id="id_category"  class="form-control" [(ngModel)]="category"  >
-                <option name="category" id="id_category" *ngFor="let c of gdt"   class="form-control" >{{c.name}}</option>
+            <select name="category" id="id_category"  class="form-control" [(ngModel)]="category" >
+                <option name="category" id="id_category" *ngFor="let c of gdt"  value="{{c.name}}" class="form-control" >{{c.name}}</option>
             </select>
             </div>
         </div>
