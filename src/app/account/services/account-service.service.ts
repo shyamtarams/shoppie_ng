@@ -68,6 +68,7 @@ private updateData(token:any) {
 }
 
 public logout() {
+  localStorage.clear();
   console.log(this.token)
   this.token = null;
   this.token_expires=null;
@@ -88,6 +89,13 @@ public role(id:any){
           this._router.navigate(['/buyer/dashboard']);
         }
   })
+}
+
+register(reg:any){
+  console.log(reg)
+  // return this.httpclient.post('http://localhost:8000/accounts/sign/',reg)
+  return this.httpclient.post('http://localhost:8000/accounts/auth/signup/',reg)
+
 }
 
 }

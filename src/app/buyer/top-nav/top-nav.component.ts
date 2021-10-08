@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from 'src/app/services/dataservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-nav',
@@ -10,7 +11,7 @@ export class TopNavComponent implements OnInit {
 
  
 
-  constructor(private getd:DataserviceService) { }
+  constructor(private getd:DataserviceService,private _router:Router) { }
   name:any
   sres:any
   user:any
@@ -32,5 +33,11 @@ export class TopNavComponent implements OnInit {
     });
   }
 
+  logout() {
+    localStorage.clear();
+    console.log(this.user.token)
+    this._router.navigate(['/accounts/login']);
+    // this.us.logout();
+  }
 
 }

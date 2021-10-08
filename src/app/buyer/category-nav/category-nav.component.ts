@@ -19,7 +19,7 @@ export class CategoryNavComponent implements OnInit {
   displaydata(){
     this.getd.getdata().subscribe(res=>{
     this.gdt=res;
-    console.log(this.gdt)
+    console.log(this.gdt,"caategory")
   //  this.dataSource = res;
  
     })

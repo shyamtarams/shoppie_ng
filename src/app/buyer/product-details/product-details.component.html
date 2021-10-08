@@ -12,8 +12,13 @@
         <h4 class="mt-4">{{ prod.description }}</h4>
         <h4 class="mt-4">Price :{{ prod.price }}/-</h4>
         <div class="row">
-            <div class="col-sm-6">
-                <button class="btn btn-info">Add To Cart</button>
+            <div class="col-sm-6" >
+                <a routerLink="/buyer/cart" routerLinkActive="active" (click)="addcart(prod.id)" *ngIf="cartcheck=='no'">
+                    <button class="btn btn-info">Add To Cart</button>
+                </a>
+                <a routerLink="/buyer/cart" routerLinkActive="active" *ngIf="cartcheck=='cart'">
+                    <button class="btn btn-info">View in Cart</button>
+                </a>
             </div>
             <div class="col-sm-6">
                 <button class="btn btn-info">Buy Now</button>
@@ -24,10 +29,11 @@
 </div>
 
 <!-- same category products -->
-<!-- <div class="col mt-4 card shadow" *ngFor="let p of pc">
+<div class="col mt-4 card shadow" >
     <div class="row">
-        <div class="col-sm-2 mt-2">
+        <div class="col-sm-2 mt-2 text-center" *ngFor="let p of pc.slice(0,6);">
             <img class="img-fluid" src="http://localhost:8000{{p.product_image}}" style="height:8rem;width:10rem;border-radius: 5px;" alt="">
+            <h6>{{ p.name }}</h6>
         </div>  
     </div>
-</div> -->
+</div>

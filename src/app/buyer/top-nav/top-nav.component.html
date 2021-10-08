@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/buyer/productlist">OnlineShoppie</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,35 +27,35 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <!-- <a class="dropdown-item" href="#"></a> -->
             <a class="dropdown-item" href="#">my orders</a>
+           
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/accounts/logout">logout</a>
+            <!-- <a class="dropdown-item" routerLink="/buyer/logout" routerLinkActive="active" (click)="logout()">logout</a> -->
+            <a class="dropdown-item" (click)="logout()">logout</a>
           </div>
         </li>
-        <li class="nav-item">
-          <!-- {% if user %} -->
-            <a class="nav-link " href="/buyer/viewcart">
-            <i class="fa fa-shopping-cart mt-2" aria-hidden="true"></i>
-            </a>
-          <!-- {% else %} -->
-            <a class="nav-link " href="/accounts/login">
-            <i class="fa fa-shopping-cart mt-2" aria-hidden="true"></i>
-            </a>
-          <!-- {% endif %} -->
 
-        </li>
+            <li class="nav-item">
+              <a routerLink="/buyer/cart" routerLinkActive="active" class="nav-link">
+                <i class="fa fa-shopping-cart mt-2" aria-hidden="true"></i>
+                </a>
+            </li>
+           
+             <li class="nav-item">
+              <a routerLink="/buyer/profile" routerLinkActive="active" class="nav-link">
+                <i class="fa fa-user mt-2" aria-hidden="true"></i>
+              </a>
+             </li>
+
       </ul>
 
       <form class="form-inline my-2 my-lg-0" method="POST" >
-        <div class="serch">
+        <div class="search">
             <input autocomplete="off" type="search" list="mylist" class="form-control mr-sm-2" name="search" id="search-text" type="search" placeholder="Search" aria-label="Search" (keyup)="search()" [(ngModel)]="name.sr">
             <!-- <input class="form-control mr-sm-2" name="search" id="search-text" type="search" placeholder="Search" aria-label="Search" (keyup)="search()" [(ngModel)]="sr"> -->
         </div>
         
         <!-- <a href="/buyer/productlist">
         </a> -->
-        
-       
-       
       </form>
 
     </div>

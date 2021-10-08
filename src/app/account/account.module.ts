@@ -5,6 +5,7 @@ import { AccountComponent } from './account.component';
 import { RoutersModule } from './routers/routers.module';
 import { SignupComponent } from './signup/signup.component';
 import { SharedModule } from '../shared/shared.module';
+import { VerifyComponent } from './verify/verify.component';
 
 
 
@@ -12,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     LoginComponent,
     AccountComponent,
-    SignupComponent
+    SignupComponent,
+    VerifyComponent
   ],
   imports: [
     CommonModule,

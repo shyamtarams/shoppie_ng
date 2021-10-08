@@ -24,4 +24,29 @@ export class ServiceService {
     console.log(cate)
     return this.httpclient.post('http://localhost:8000/cateprod/',cate)
    }
+
+   crt:any
+  //  producttocart(id:any,uid:any){
+  //    console.log(id,uid)
+  //   // this.crt={
+  //   //   id,
+  //   //   uid
+  //   // }
+  //   return this.httpclient.post('http://localhost:8000/cartprod/',id,uid)
+  //  }
+
+   producttocart(user:any){
+     console.log(user)
+    return this.httpclient.post('http://localhost:8000/cartprod/',user)
+   }
+
+   getcartproduct(uid:any){
+     console.log(uid)
+     return this.httpclient.post('http://localhost:8000/viewcart/',uid)
+   }
+
+   checkcart(pid:any){
+    return this.httpclient.post('http://localhost:8000/checkincart/',pid)
+   }
+
 }

@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     // localStorage.setItem('myCat', 'Tom');
     // localStorage.ProductName = 'Mobile';
+    // this.logout() 
     this.user = {
       username:'',
       password:''
@@ -30,13 +31,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    
+    this.logout() 
     console.log(this.user)
     this.us.login({'username': this.user.username, 'password':this.user.password});
   }
 
   logout() {
+    localStorage.clear();
     console.log(this.user.token)
-    this.us.logout();
+    // this.us.logout();
   }
 }

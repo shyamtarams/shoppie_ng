@@ -13,6 +13,7 @@ import { SubProductView1Component } from './sub-product-view1/sub-product-view1.
 import { BrandsComponent } from './brands/brands.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { Offer1Component } from './offers/offer1/offer1.component';
+import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
 
 
 
@@ -28,7 +29,8 @@ import { Offer1Component } from './offers/offer1/offer1.component';
     SubProductView1Component,
     BrandsComponent,
     ProductDetailsComponent,
-    Offer1Component
+    Offer1Component,
+    BuyerProfileComponent
   ],
   imports: [
     CommonModule,
