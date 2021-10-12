@@ -45,8 +45,10 @@ export class ServiceService {
      return this.httpclient.post('http://localhost:8000/viewcart/',uid)
    }
 
-   checkcart(pid:any){
-    return this.httpclient.post('http://localhost:8000/checkincart/',pid)
+   arg:any
+   checkcart(arg:any){
+    
+    return this.httpclient.post('http://localhost:8000/checkincart/',arg)
    }
 
 }

@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AccountComponent } from '../account.component';
 import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
+import { VerifyComponent } from '../verify/verify.component';
 
 const routes: Routes=[
   { path: 'account', component: AccountComponent,
@@ -11,6 +12,7 @@ const routes: Routes=[
     {path:'login',component: LoginComponent},
     {path:'signup',component: SignupComponent},
     {path:'logout',component: LoginComponent},
+    {path:'verify',component: VerifyComponent},
     ]
   },
 ];

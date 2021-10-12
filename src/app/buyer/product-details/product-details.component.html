@@ -13,7 +13,8 @@
         <h4 class="mt-4">Price :{{ prod.price }}/-</h4>
         <div class="row">
             <div class="col-sm-6" >
-                <a routerLink="/buyer/cart" routerLinkActive="active" (click)="addcart(prod.id)" *ngIf="cartcheck=='no'">
+                <!-- <a routerLink="/buyer/cart" routerLinkActive="active" (click)="addcart(prod.id)" *ngIf="cartcheck=='no'"> -->
+                <a  (click)="addcart(prod.id)" *ngIf="cartcheck=='no'">
                     <button class="btn btn-info">Add To Cart</button>
                 </a>
                 <a routerLink="/buyer/cart" routerLinkActive="active" *ngIf="cartcheck=='cart'">

@@ -5,13 +5,23 @@ import { AddProductComponent } from '../app/seller/add-product/add-product.compo
 import { ProductOrdersComponent } from './seller/product-orders/product-orders.component';
 import { LoginComponent } from './account/login/login.component';
 import { AccountComponent } from './account/account.component';
+import { BuyerModule } from './buyer/buyer.module';
+import { BuyerComponent } from './buyer/buyer.component';
 
 const routes: Routes = [
   // { path: 'Dashboard', component: SellerDashboardComponent },
   // { path: 'Addproduct', component: AddProductComponent },
   // { path: 'Productorders', component:ProductOrdersComponent },
   // {path:'login', component:LoginComponent},
-  {path:'', component:AccountComponent},
+  {path:'', component:AccountComponent
+  // children: [
+  //   { path: 'buyer', loadChildren: './buyer/buyer.module#BuyerModule' },
+    
+  // ]
+},
+// {path:'buyer', component:BuyerComponent},
+// { path: 'buyer', loadChildren: './buyer/BuyerModule' },
+
 
 ];
 
@@ -22,3 +32,4 @@ const routes: Routes = [
 
 
 export class AppRoutingModule { }
+

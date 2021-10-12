@@ -77,15 +77,25 @@ public logout() {
 }
 
 // public rule:any
+auth:any
 public role(id:any){
   console.log(id)
   this.httpclient.post('http://localhost:8000/check/',id).subscribe(data=>{
         console.log(data)
+        // create encoded creadential for user
+        this.auth={name:this.username, uid:this.user_id, role:data};
+        this.auth=JSON.stringify(this.auth);
+        this.auth=btoa(this.auth)
+        console.log(this.auth)
+        localStorage.setItem('key',this.auth)
         // this.rule=data
-        if(data == "seller"){
+        if (data == "Disabled"){
+          location.href="/account/verify";
+        }
+        else if(data == "seller"){
           this._router.navigate(['/seller/Dashboard']);
         }
-        if(data == "buyer"){
+        else if(data == "buyer"){
           this._router.navigate(['/buyer/dashboard']);
         }
   })
@@ -96,6 +106,18 @@ register(reg:any){
   // return this.httpclient.post('http://localhost:8000/accounts/sign/',reg)
   return this.httpclient.post('http://localhost:8000/accounts/auth/signup/',reg)
 
+}
+
+updateprofile(uid:any){
+  console.log(uid)
+  return this.httpclient.post('http://localhost:8000/accounts/updateprofile',uid)
+}
+id:any;
+getusersingle(uid:any){
+  
+  this.id= uid['uid'];
+  console.log(this.id)
+  return this.httpclient.get('http://localhost:8000/accounts/getuser/'+this.id)
 }
 
 }

@@ -18,11 +18,19 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  sotp:any
   signup(){
     console.log(this.sign)
     this.ac.register(this.sign).subscribe(res=>{
-      console.log(res)
-      
+    console.log(res)
+    this.sotp=res 
+    localStorage.setItem('sotp',this.sotp)
+    if(res=="error"){
+      console.log("error")
+    }
+    else{
+      location.href="/account/verify";
+    }
     })
   }
   

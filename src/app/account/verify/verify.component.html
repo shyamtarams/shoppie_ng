@@ -1,1 +1,7 @@
-<p>verify works!</p>
+
+<form action="" (ngSubmit)="verify()">
+    <input class="form-control mt-4" type="text" name="tp"    maxlength="150"  [(ngModel)]="account.tp" placeholder="verify">
+    <button type="submit">verify</button>
+</form>
+
+<a class="nav-link" [routerLink]="['buyer']">Drivers<span class="sr-only"></span>

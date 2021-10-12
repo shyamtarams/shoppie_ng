@@ -49,8 +49,13 @@ export class ProductDetailsComponent implements OnInit {
   cartcheck:any
   checkincart(){
     this.id=localStorage.getItem('pid')
+    this.user=localStorage.getItem('user_id')
+    this.crt={
+      'pid':this.id,
+      'uid':this.user
+    }
     console.log(this.id,"checkk===")
-    this.pid.checkcart({'pid':this.id}).subscribe(cr=>{
+    this.pid.checkcart({'u':this.crt}).subscribe(cr=>{
       console.log(cr,"c====")
       this.cartcheck=cr
     })
@@ -79,7 +84,10 @@ addcart(cpid:any){
   }
 
   this.pid.producttocart({'u':this.crt}).subscribe(res=>{
-    console.log(res)
+    // console.log(res)
+    if(res=="success"){
+      location.href="/buyer/cart";
+    }
   })
 
 
